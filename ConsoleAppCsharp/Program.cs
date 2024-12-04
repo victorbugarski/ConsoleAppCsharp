@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ConsoleAppCsharp.Services;
+
+MenuServices _menuService = new();
+var mainMenu = new MainMenu();
+mainMenu.CreateMainMenu();
+
+
