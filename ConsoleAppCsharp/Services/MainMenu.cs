@@ -26,7 +26,7 @@ public class MainMenu
             Console.Clear();
             Console.WriteLine("Välkommen, vänligen välj vad du vill göra.");
             Console.WriteLine("1.Registrera en användare");
-            Console.WriteLine("2.Visa registrerade användera.");
+            Console.WriteLine("2.Visa registrerade användare.");
             Console.WriteLine("Q.Avsluta programmet.");
             Console.WriteLine("**");
             Console.Write("Välj ditt alternativ: ");
