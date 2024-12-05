@@ -8,14 +8,14 @@ public class FileService
 {
     private readonly string _directoryPath;
     private readonly string _filePath;
-    private readonly JsonSerializerOptions jsonSerializerOptions;
+    private readonly JsonSerializerOptions _jsonSerializerOptions;
 
     public FileService(string directoryPath = "Data", string fileName = "list.json")
     {
         _directoryPath = directoryPath;
         _filePath = Path.Combine(_directoryPath, fileName);
 
-        jsonSerializerOptions = new JsonSerializerOptions { WriteIndented = true };
+        _jsonSerializerOptions = new JsonSerializerOptions { WriteIndented = true };
     }
 
     public void SaveListToFile(List<User> list)
@@ -43,7 +43,7 @@ public class FileService
                 return [];
             var json = File.ReadAllText(_filePath);
 
-            var list = JsonSerializer.Deserialize<List<User>>(json, jsonSerializerOptions);
+            var list = JsonSerializer.Deserialize<List<User>>(json, _jsonSerializerOptions);
 
             return list ?? [];
           }
