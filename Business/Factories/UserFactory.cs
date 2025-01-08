@@ -17,6 +17,7 @@ namespace Business.Factories;
                 LastName = form.lastName,
                 Email = form.email,
                 Adress = form.adress,
+                CreatedDate = DateTime.Now
             };
         }
     }

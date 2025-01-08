@@ -9,9 +9,11 @@ namespace Business.Services;
     private List<User> _users = [];
     private readonly FileService _fileService = new(@"c:\Projectsstudio");
 
+
     public void Add(UserRegistrationForm form)
     {
         User user = UserFactory.Create(form);
+        form.CreatedDate = DateTime.Now;
         _users.Add(user);
         _fileService.SaveListToFile(_users);
     }
@@ -21,10 +23,5 @@ namespace Business.Services;
         _users = _fileService.LoadListFromFile();
         return _users;
     }
-    
-
-   
-
-     
- }
+}
 
